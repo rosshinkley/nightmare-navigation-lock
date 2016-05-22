@@ -35,7 +35,7 @@ var base = 'http://localhost:7500/';
 
 describe('Nightmare Navigation Lock', function() {
   before(function(done) {
-    require('../nightmare-navigation-lock');
+    require('../nightmare-navigation-lock')(Nightmare);
     server.listen(7500, done);
   });
 
