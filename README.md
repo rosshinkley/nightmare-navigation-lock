@@ -4,7 +4,8 @@
 Require the library: 
 
 ```js
-require('nightmare-navigation-lock')
+var Nightmare = require('nightmare');
+require('nightmare-navigation-lock')(Nightmare);
 ```
 
 ... and then you're able to use `lockNavigation` and `unlockNavigation`.
@@ -31,7 +32,9 @@ Electron does not expose a method to prevent hash navigation up front per the [`
 ## Example
 
 ```js
-var nightmare = require('nightmare')();
+var Nightmare = require('nightmare');
+require('nightmare-navigation-lock')(Nightmare);
+var nightmare = Nightmare();
 nightmare
  .goto('http://some-url.tld')
  .lockNavigation()
